@@ -14,4 +14,11 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/login/$', 'microblogging.views.login'),
+    url(r'^accounts/auth/$', 'microblogging.views.auth_view'),
+    url(r'^accounts/logout/$', 'microblogging.views.logout'),
+    url(r'^accounts/loggedin/$', 'microblogging.views.loggedin'), 
+    url(r'^accounts/invalid/$', 'microblogging.views.invalid_login'),
+    url(r'^accounts/register/$', 'microblogging.views.register_user'),
+    url(r'^accounts/register_success/$', 'microblogging.views.register_success'),
 )
