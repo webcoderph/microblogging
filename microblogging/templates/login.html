@@ -5,7 +5,7 @@
 <div class="wrowper">
 	<h1>Sign In!</h1>
 	<div class="row">
-		{% if forr.errors %}
+		{% if form.errors %}
 			<p>invalid username or password</p>
 		{% endif %}
 
@@ -24,9 +24,11 @@
 			</div>
 		 </div>	
 		 <div class="form-group">
-	      <div class="col-sm-offset-2 col-sm-10">
-	      <button type="submit" class="btn btn-default">Sign in</button>
-	      </div>
+		      <div class="col-sm-offset-2 col-sm-10">
+		      <button type="submit" class="btn btn-default">Sign in</button>
+		      &nbsp;&nbsp;
+		      <button onclick="redirecturl()" type="button" id="registerbtnweb" class="btn btn-primary">Register</button>
+		      </div>
 	     </div>
 		
 

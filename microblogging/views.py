@@ -2,7 +2,12 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.contrib import auth
 from django.core.context_processors import csrf
-from django.contrib.auth.forms import UserCreationForm
+from forms import MyRegistrationForm
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def index(request):
+    return HttpResponseRedirect('/posts/all/')
 
 def login(request):
 	c = {}
@@ -30,4 +35,22 @@ def invalid_login(request):
 def logout(request):
 	auth.logout(request)
 	return render_to_response('logout.html')	
+
+def register(request):
+	if request.method == "POST":
+		form = MyRegistrationForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('/accounts/login')
+
+
+	args = {}
+	args.update(csrf(request))  
+	
+	args['form'] = MyRegistrationForm()
+
+	return render_to_response('register.html', args)			
+
+
+
 

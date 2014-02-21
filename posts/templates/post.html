@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+	{% block content %}
+	<h1>{{ post.title }}</h1>
+	<p>{{ post.body|safe|linebreaks }}</p>
+	{% if post.thumbnail %}
+		<p><img src="/static/{{post.thumbnail}}" width="200" /></p>
+	{% endif %}
+	{% endblock %}

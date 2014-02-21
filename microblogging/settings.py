@@ -113,11 +113,13 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
+    'posts',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
 
+LOGIN_URL = '/accounts/login'
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.
