@@ -22,8 +22,14 @@
 					<input id="image" type="file" name="thumbnail">
 					<span class="glyphicon glyphicon-info-sign form-control-feedback" data-toggle="tooltip" data-placement="right" title="Required."></span> 
 				 </div>		
-				<input type="text" name="user_id" value="{{uid}}" />		 		 
-				<input type="submit" name="submit" value="Create"/>
+				<input type="hidden" name="user_id" value="{{uid}}" />		
+			  <div class="form-group">
+			      
+				      <button type="submit" class="btn btn-default">Create</button>
+				     
+			    
+	          </div> 		 
+				
 			</form>
 		</div>
 	</div>
